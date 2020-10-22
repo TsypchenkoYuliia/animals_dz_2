@@ -1,0 +1,18 @@
+<h1>Hello, Animals!</h1>
+
+<div class="loginForm">
+  <form #myForm="ngForm" action="api/login" method="post">
+    <div class="container">
+      <h1>Login</h1>
+      <hr>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="admin@gmail.com" [(ngModel)]="name" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="admin@gmail.com" name="password" ngModel  required>
+
+      <button type="button" id="btn" (click)="submit(myForm)" class="registerbtn">Enter</button>
+    </div>
+  </form>
+</div>

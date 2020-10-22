@@ -1,0 +1,30 @@
+<p>adminpanel works!</p>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Current Role</th>
+      <th>New role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td></td>
+      <td>{{ user.id }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <select [(ngModel)]="newRole" (change)="selectChangeHandler($event)" name="newRole">
+          <option *ngFor="let c of roles" [ngValue]="user.id">{{c}}</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
